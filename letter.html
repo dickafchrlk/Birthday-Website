@@ -1,41 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Nunito:wght@400;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
-<title>To My Favorite Person</title>
-</head>
-<body>
-<div class="rain" aria-hidden="true"></div>
-<div class="petals" aria-hidden="true">
-<span class="petal" style="--x:8%;--d:11s;--delay:0s"></span><span class="petal" style="--x:22%;--d:14s;--delay:3s"></span>
-<span class="petal" style="--x:38%;--d:12s;--delay:6s"></span><span class="petal" style="--x:55%;--d:15s;--delay:1s"></span>
-<span class="petal" style="--x:68%;--d:10s;--delay:4s"></span><span class="petal" style="--x:80%;--d:13s;--delay:7s"></span>
-<span class="petal" style="--x:92%;--d:12s;--delay:2s"></span><span class="petal" style="--x:46%;--d:16s;--delay:9s"></span>
-</div>
-<main class="page">
-  <article class="letter rise" aria-labelledby="t">
-    <span class="perch cat wiggle" aria-hidden="true">🐱</span>
-    <span class="perch dino wiggle" style="animation-delay:-2s" aria-hidden="true">🦖</span>
-    <div class="flower-row" style="margin:0" aria-hidden="true"><span class="sway">🌼</span><span class="fmn"></span><span class="sway" style="animation-delay:-2s">🌼</span></div>
-    <h1 id="t">To My Favorite Person<br>Happy Birthday!</h1>
-    <!-- EDIT: tulis pesanmu di antara tag <p> berikut -->
-    <div class="body">
-      <p>Dear Mima,</p>
-      <p>You once told me you were afraid of being a bad person, but honestly, I’ve never seen that in you. To me, you’re one of the kindest people I know—so kind that sometimes I worry you’ll end up blaming yourself for things that aren't your fault. My only wish is for you to rely on me more, whenever you're tired, sad, or feeling lost.</p>
-      <p>I love it when you call me sayang, kakak, and pacar. I love listening to you share things with so much excitement, and I love seeing you happy. Please don't carry your sadness alone. Keep smiling, and whenever things feel heavy, remember you can always talk to me.</p>
-      <p>Happy birthday!! Janji aku gakan nakal dikit (5%-an lah). <span aria-hidden="true">💗</span></p>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Nunito:wght@400;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>To My Favorite Person</title>
+  </head>
+  <body>
+    <audio id="backgroundMusic" loop preload="auto">
+      <source src="assets/music/background-music.mp3" type="audio/mpeg">
+    </audio>
+    <button id="musicButton" class="music-toggle" type="button" aria-label="Play background music">
+      <span class="music-icon" aria-hidden="true">🎵</span>
+      <span class="music-label">Play Music</span>
+    </button>
+    <div class="rain" aria-hidden="true"></div>
+    <div class="petals" aria-hidden="true">
+      <span class="petal" style="--x:8%;--d:11s;--delay:0s"></span><span class="petal" style="--x:22%;--d:14s;--delay:3s"></span>
+      <span class="petal" style="--x:38%;--d:12s;--delay:6s"></span><span class="petal" style="--x:55%;--d:15s;--delay:1s"></span>
+      <span class="petal" style="--x:68%;--d:10s;--delay:4s"></span><span class="petal" style="--x:80%;--d:13s;--delay:7s"></span>
+      <span class="petal" style="--x:92%;--d:12s;--delay:2s"></span><span class="petal" style="--x:46%;--d:16s;--delay:9s"></span>
     </div>
-    <p class="sign">With all my love,<br>Dicka <span class="float deco" style="font-size:1.4rem" aria-hidden="true">🌧️</span></p>
-  </article>
-  <nav class="nav" aria-label="Page navigation">
-    <a class="btn ghost" href="gallery.html">Back to Memories</a>
-    <a class="btn" href="index.html">Back to the Beginning <span class="heart" aria-hidden="true">💗</span></a>
-  </nav>
-</main>
-</body>
+    <main class="page">
+      <article class="letter rise" aria-labelledby="t">
+        <span class="perch cat wiggle" aria-hidden="true">🐱</span>
+        <span class="perch dino wiggle" style="animation-delay:-2s" aria-hidden="true">🦖</span>
+        <div class="flower-row" style="margin:0" aria-hidden="true"><span class="sway">🌼</span><span class="fmn"></span><span class="sway" style="animation-delay:-2s">🌼</span></div>
+        <h1 id="t">To My Favorite Person<br>Happy Birthday!</h1>
+        <!-- EDIT: tulis pesanmu di antara tag <p> berikut -->
+        <div class="body">
+          <p>Dear Mima,</p>
+          <p>You once told me you were afraid of being a bad person, but honestly, I’ve never seen that in you. To me, you’re one of the kindest people I know—so kind that sometimes I worry you’ll end up blaming yourself for things that aren't your fault. My only wish is for you to rely on me more, whenever you're tired, sad, or feeling lost.</p>
+          <p>I love it when you call me sayang, kakak, and pacar. I love listening to you share things with so much excitement, and I love seeing you happy. Please don't carry your sadness alone. Keep smiling, and whenever things feel heavy, remember you can always talk to me.</p>
+          <p>Happy birthday!! Janji aku gakan nakal dikit (5%-an lah). <span aria-hidden="true">💗</span></p>
+        </div>
+        <p class="sign">With all my love,<br>Dicka <span class="float deco" style="font-size:1.4rem" aria-hidden="true">🌧️</span></p>
+      </article>
+      <nav class="nav" aria-label="Page navigation">
+        <a class="btn ghost" href="gallery.html">Back to Memories</a>
+        <a class="btn" href="index.html">Back to the Beginning <span class="heart" aria-hidden="true">💗</span></a>
+      </nav>
+    </main>
+    <script src="js/music.js"></script>
+  </body>
 </html>
