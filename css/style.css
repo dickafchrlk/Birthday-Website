@@ -1,0 +1,137 @@
+/* A Little Garden of Love — style.css (HTML + CSS only) */
+:root{
+  --bg:#FFF7F8; --pink:#F4B6C2; --soft:#FADADD; --cream:#FFF1E6;
+  --lav:#E8DDF5; --blue:#DCEAF7; --sage:#DDE8D5; --text:#66545B; --rose:#8F3D56;
+  --f-head:"Playfair Display",Georgia,serif;
+  --f-body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-hand:"Caveat","Segoe Print","Comic Sans MS",cursive;
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.5rem; --radius:24px;
+  --shadow:0 10px 28px rgba(201,111,134,.18);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100dvh;font-family:var(--f-body);color:var(--text);line-height:1.6;
+  background:radial-gradient(circle at 15% 10%,var(--soft),transparent 45%),
+             radial-gradient(circle at 90% 90%,var(--lav),transparent 45%),var(--bg);
+  overflow-x:hidden}
+h1,h2,h3{font-family:var(--f-head);font-weight:600;line-height:1.2;margin:0 0 var(--s1)}
+p{margin:0 0 var(--s2)}
+a{color:var(--rose)}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:8px}
+.hand{font-family:var(--f-hand);font-size:1.5rem;color:var(--rose)}
+
+/* ---------- Layout ---------- */
+.page{position:relative;z-index:1;min-height:100dvh;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:var(--s3) var(--s2) var(--s4);gap:var(--s3)}
+.card{position:relative;width:min(100%,640px);padding:var(--s4) var(--s3);text-align:center;
+  background:var(--cream);border:3px solid var(--pink);border-radius:var(--radius);box-shadow:var(--shadow);
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 2px,transparent 2px 6px)}
+.card::after{content:"";position:absolute;inset:8px;border:2px dashed var(--soft);border-radius:calc(var(--radius) - 8px);pointer-events:none}
+.card>*{position:relative;z-index:1}
+
+/* ---------- Flowers ---------- */
+.fmn{display:inline-block;width:1.7rem;aspect-ratio:1;flex:none;
+  background:radial-gradient(circle at 50% 50%,#FFF3B0 0 11%,transparent 12%),
+    radial-gradient(circle at 50% 24%,#A9CBF0 0 21%,transparent 22%),
+    radial-gradient(circle at 76% 43%,#A9CBF0 0 21%,transparent 22%),
+    radial-gradient(circle at 66% 74%,#A9CBF0 0 21%,transparent 22%),
+    radial-gradient(circle at 34% 74%,#A9CBF0 0 21%,transparent 22%),
+    radial-gradient(circle at 24% 43%,#A9CBF0 0 21%,transparent 22%)}
+.flower-row{display:flex;justify-content:center;align-items:center;gap:.6rem;font-size:1.6rem;margin:0 0 var(--s2)}
+.corner{position:absolute;z-index:2;font-size:2rem;line-height:1;display:flex;gap:2px;transform-origin:50% 100%}
+.corner.tl{top:-14px;left:-6px}.corner.tr{top:-14px;right:-6px}
+.corner.bl{bottom:-12px;left:-6px}.corner.br{bottom:-12px;right:-6px}
+.sway{animation:sway 5s ease-in-out infinite;transform-origin:50% 100%}
+.float{animation:float 6s ease-in-out infinite}
+.wiggle{animation:wiggle 4s ease-in-out infinite}
+.deco{display:inline-block;font-size:1.8rem}
+
+/* ---------- Text & buttons ---------- */
+.kicker{font-family:var(--f-hand);font-size:1.6rem;color:var(--rose)}
+.title{font-size:clamp(1.7rem,6.5vw,2.6rem);color:var(--rose)}
+.lead{font-size:1.05rem;max-width:34ch;margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.5rem;margin-top:var(--s2);padding:.8rem 1.6rem;
+  background:var(--pink);color:var(--rose);font-weight:700;text-decoration:none;border-radius:999px;
+  box-shadow:0 6px 0 #e79aab;transition:transform .25s,box-shadow .25s}
+.btn:hover,.btn:focus-visible{transform:translateY(-4px);box-shadow:0 10px 0 #e79aab}
+.btn .heart{display:inline-block;animation:beat 1.6s ease-in-out infinite}
+.btn.ghost{background:var(--bg);box-shadow:0 6px 0 var(--soft);border:2px solid var(--pink)}
+.nav{display:flex;flex-wrap:wrap;gap:var(--s2);justify-content:center}
+
+/* ---------- Gallery ---------- */
+.wide{width:min(100%,980px)}
+.head{text-align:center}
+.polaroids{display:grid;gap:var(--s4) var(--s3);grid-template-columns:1fr;padding:var(--s3) var(--s2);margin:0;list-style:none}
+.polaroid{--r:-2deg;position:relative;margin:0;padding:12px 12px 14px;background:#fff;border-radius:6px;
+  box-shadow:var(--shadow);transform:rotate(var(--r));transition:transform .3s,box-shadow .3s}
+.polaroids li:nth-child(even) .polaroid{--r:2.5deg}.polaroids li:nth-child(3) .polaroid{--r:-1deg}.polaroids li:nth-child(4) .polaroid{--r:3deg}
+.polaroid:hover{transform:rotate(var(--r)) translateY(-8px);box-shadow:0 16px 34px rgba(201,111,134,.28)}
+.polaroid::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;translate:-50% 0;
+  background:rgba(232,221,245,.85);transform:rotate(-3deg)}
+.polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--soft);border-radius:2px}
+.polaroid figcaption{font-family:var(--f-hand);font-size:1.5rem;text-align:center;padding-top:10px;color:var(--rose)}
+.loves{display:grid;gap:var(--s3);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.love{position:relative;padding:var(--s3);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transition:transform .3s}
+.love:hover{transform:translateY(-6px)}
+.love h3{font-size:1.3rem;color:var(--rose);position:relative}
+.love.flowers{background:var(--soft)}.love.food{background:var(--cream)}
+.love.friends{background:var(--lav)}.love.weather{background:var(--blue)}
+.stickers{position:relative;display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;margin:var(--s2) 0 0;padding:0}
+.sticker{display:flex;align-items:center;gap:.4rem;padding:.35rem .8rem .35rem .45rem;background:#fff;
+  border:2px dashed var(--pink);border-radius:999px;font-weight:600;font-size:.95rem}
+.sticker .em{font-size:1.5rem;line-height:1}
+.love .sticker:nth-child(odd){animation:wiggle 5s ease-in-out infinite}
+.love .sticker:nth-child(even){animation:wiggle 6s ease-in-out -2s infinite}
+.mini-rain{position:absolute;inset:0;opacity:.5;pointer-events:none;
+  background:linear-gradient(105deg,transparent 48%,rgba(120,160,210,.45) 50%,transparent 52%) 0 0/22px 40px;
+  animation:rain 1.2s linear infinite}
+
+/* ---------- Letter ---------- */
+.letter{width:min(100%,640px);text-align:left;padding:var(--s3) var(--s2) var(--s3) 3.2rem;background-color:#fffdf9;
+  background-image:repeating-linear-gradient(transparent 0 33px,rgba(169,203,240,.55) 33px 34px);
+  line-height:34px;border-radius:var(--radius);border:3px solid var(--pink);box-shadow:var(--shadow);position:relative}
+.letter::before{content:"";position:absolute;top:0;bottom:0;left:2.4rem;border-left:2px solid rgba(244,182,194,.8)}
+.letter h1{font-size:clamp(1.6rem,6vw,2.3rem);line-height:1.3;color:var(--rose);text-align:center;margin:0 0 var(--s1)}
+.letter .body{font-family:var(--f-hand);font-size:1.45rem}
+.letter .body p{margin:0}
+.sign{font-family:var(--f-hand);font-size:1.7rem;color:var(--rose);margin-top:var(--s2)}
+.perch{position:absolute;font-size:2rem;line-height:1}
+.perch.cat{top:-26px;right:18px}.perch.dino{bottom:-22px;left:22px}
+
+/* ---------- Background effects ---------- */
+.rain{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;
+  background:linear-gradient(105deg,transparent 48%,rgba(120,160,210,.5) 50%,transparent 52%) 0 0/46px 110px;
+  animation:rain 1.8s linear infinite}
+.petals{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.petal{position:absolute;top:-6%;left:var(--x);width:12px;height:16px;background:var(--pink);
+  border-radius:80% 0 80% 0;opacity:.8;animation:fall var(--d) linear var(--delay) infinite}
+.petal:nth-child(3n){background:var(--lav)}.petal:nth-child(4n){background:var(--soft);width:9px;height:12px}
+
+/* ---------- Entrance ---------- */
+.rise{opacity:0;animation:rise .9s ease forwards;animation-delay:var(--t,0s)}
+
+/* ---------- Keyframes ---------- */
+@keyframes sway{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes wiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes rain{to{background-position:-23px 110px}}
+@keyframes fall{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(30px,55vh) rotate(180deg)}
+  100%{transform:translate(-20px,112vh) rotate(360deg)}}
+
+/* ---------- Larger screens ---------- */
+@media (min-width:640px){
+  .card{padding:3.5rem 3rem}
+  .polaroids{grid-template-columns:repeat(2,1fr)}
+  .polaroids li:nth-child(even){margin-top:var(--s4)}
+  .letter{padding:var(--s4) var(--s4) var(--s4) 4.6rem}
+  .letter::before{left:3.6rem}
+}
+@media (min-width:960px){.polaroids{gap:3.5rem 2.5rem}}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rise{opacity:1}.petals,.rain,.mini-rain{display:none}
+}
